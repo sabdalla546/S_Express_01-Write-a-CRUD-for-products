@@ -29,12 +29,8 @@ const validateData = (req,res,next)=>{
             title: z.string(),
             price: z.number(),
             description: z.string(),
-            category: z.object({
-            id:z.number(),
-            name:z.string(),
-            image:z.string(),
-          }),
-          images: z.array(z.string()),
+            categoryId: z.number(),
+            images: z.array(z.string()),
         });
     
         req.body = schema.parse(req.body);
